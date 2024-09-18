@@ -4,7 +4,7 @@ abstract class WeatherEvent extends Equatable {
   const WeatherEvent();
 
   @override
-  List<Object?> get props => [];
+  List<Object> get props => [];
 }
 
 class OnCityChanged extends WeatherEvent {
@@ -13,5 +13,5 @@ class OnCityChanged extends WeatherEvent {
   const OnCityChanged(this.cityName);
 
   @override
-  List<Object?> get props => [cityName];
+  List<Object> get props => [cityName];
 }

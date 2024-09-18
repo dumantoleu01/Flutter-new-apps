@@ -1,32 +1,21 @@
 import 'package:get_it/get_it.dart';
-import 'data/data_sources/remote_data_source.dart';
-import 'data/repositories/weather_repository_impl.dart';
-import 'domain/repositories/weather_repository.dart';
-import 'domain/usecases/get_current_weather.dart';
-import 'presentation/bloc/weather_bloc.dart';
+import 'package:weather_app_with_tests/features/data/datasource/remote_data_source.dart';
+import 'package:weather_app_with_tests/features/data/repositories/weather_repository_impl.dart';
+import 'package:weather_app_with_tests/features/domain/repositories/weather_repository.dart';
+import 'package:weather_app_with_tests/features/domain/usecase/get_current_weather.dart';
+import 'package:weather_app_with_tests/features/presentation/bloc/weather_bloc.dart';
 import 'package:http/http.dart' as http;
 
 final sl = GetIt.instance;
 
-void setup() {
-  // bloc
+void setupLocator() {
   sl.registerFactory(() => WeatherBloc(sl()));
 
-  // usecase
   sl.registerLazySingleton(() => GetCurrentWeatherUseCase(sl()));
 
-  // repository
-  sl.registerLazySingleton<WeatherRepository>(
-    () => WeatherRepositoryImpl(weatherRemoteDataSource: sl()),
-  );
+  sl.registerLazySingleton<WeatherRepository>(() => WeatherRepositoryImpl(weatheRemoteDataSource: sl()));
 
-  // data source
-  sl.registerLazySingleton<WeatherRemoteDataSource>(
-    () => WeatherRemoteDataSourceImpl(
-      client: sl(),
-    ),
-  );
+  sl.registerLazySingleton<WeatheRemoteDataSource>(() => WeatherRemoteDataSourceImpl(client: sl()));
 
-  // external
   sl.registerLazySingleton(() => http.Client());
 }

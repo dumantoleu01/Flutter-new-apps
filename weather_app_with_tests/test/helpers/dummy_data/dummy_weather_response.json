@@ -1,0 +1,45 @@
+{
+    "coord": {
+    "lon": 71.446,
+    "lat": 51.1801
+    },
+    "weather": [
+    {
+    "id": 800,
+    "main": "Clear",
+    "description": "clear sky",
+    "icon": "01n"
+    }
+    ],
+    "base": "stations",
+    "main": {
+    "temp": 274.12,
+    "feels_like": 268.93,
+    "temp_min": 274.12,
+    "temp_max": 274.12,
+    "pressure": 1033,
+    "humidity": 86,
+    "sea_level": 1033,
+    "grnd_level": 989
+    },
+    "visibility": 10000,
+    "wind": {
+    "speed": 6,
+    "deg": 70
+    },
+    "clouds": {
+    "all": 0
+    },
+    "dt": 1726508144,
+    "sys": {
+    "type": 1,
+    "id": 8820,
+    "country": "KZ",
+    "sunrise": 1726447867,
+    "sunset": 1726493230
+    },
+    "timezone": 18000,
+    "id": 1526273,
+    "name": "Nur-Sultan",
+    "cod": 200
+    }
