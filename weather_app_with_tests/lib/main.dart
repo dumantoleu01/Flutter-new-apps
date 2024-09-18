@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [BlocProvider(create: (_) => sl<WeatherBloc>())],
       child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: WeatherPage(),
       ),
     );

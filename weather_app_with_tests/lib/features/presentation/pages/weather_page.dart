@@ -106,7 +106,7 @@ class WeatherPage extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                state.result.temperature.toString(),
+                                kelvinToCelsius(state.result.temperature),
                                 style: const TextStyle(
                                   fontSize: 16.0,
                                   letterSpacing: 1.2,
